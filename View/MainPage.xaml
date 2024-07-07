@@ -4,6 +4,7 @@
              xmlns:model="clr-namespace:rentacar.Model"
              x:Class="rentacar.View.MainPage">
 
+    <VerticalStackLayout>
     <CollectionView>
         <CollectionView.ItemsSource>
             <x:Array Type="{x:Type model:rentacar}">
@@ -27,6 +28,7 @@
         </CollectionView.ItemsSource>
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="model:rentacar">
+               
                 <HorizontalStackLayout Padding="10">
                     <Image Source="{Binding image}"
                            HeightRequest="100"
@@ -37,10 +39,20 @@
                         <Label Text="{Binding title}" FontSize="24"/>
                         <Label Text="{Binding class}" FontSize="12"/>
                     </VerticalStackLayout>
+
                 </HorizontalStackLayout>
-                
+
+               
             </DataTemplate>
+
         </CollectionView.ItemTemplate>
+        
     </CollectionView>
-    
+
+        <HorizontalStackLayout Padding="10" Margin="10" Spacing="10" Opacity="100">
+            <Button Text="Previous" WidthRequest="110" FontSize="20" ></Button>
+            <Button Text="Next" WidthRequest="100" FontSize="20" ></Button>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
 </ContentPage>
+
