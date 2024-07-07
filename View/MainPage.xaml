@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:rentacar.Model"
+             x:Class="rentacar.View.MainPage">
+
+    <CollectionView>
+        <CollectionView.ItemsSource>
+            <x:Array Type="{x:Type model:rentacar}">
+                <model:rentacar 
+                    title="Mazda MX-5"
+                    class= "Sports car Roadster"
+                    image= "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/2015_Mazda_MX-5_ND_2.0_SKYACTIV-G_160_i-ELOOP_Rubinrot-Metallic_Vorderansicht.jpg/400px-2015_Mazda_MX-5_ND_2.0_SKYACTIV-G_160_i-ELOOP_Rubinrot-Metallic_Vorderansicht.jpg"
+                    />
+                <model:rentacar
+                    title="Volkswagen Kübelwagen"
+                    image= "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/VW_Kuebelwagen_1.jpg/400px-VW_Kuebelwagen_1.jpg"
+                    class= "Military vehicle"
+                       />
+                <model:rentacar
+                    title="Porsche Cayenne"
+                    image= "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/2014_Porsche_Cayenne_%2892A_MY14%29_GTS_wagon_%282015-08-07%29_01.jpg/400px-2014_Porsche_Cayenne_%2892A_MY14%29_GTS_wagon_%282015-08-07%29_01.jpg"
+                    class= "Mid-size luxury crossover SUV"
+   
+                    />
+            </x:Array>
+        </CollectionView.ItemsSource>
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="model:rentacar">
+                <HorizontalStackLayout Padding="10">
+                    <Image Source="{Binding image}"
+                           HeightRequest="100"
+                           WidthRequest="100"
+                           Aspect="AspectFill"/>
+
+                    <VerticalStackLayout Spacing="4" Padding="10" VerticalOptions="Center">
+                        <Label Text="{Binding title}" FontSize="24"/>
+                        <Label Text="{Binding class}" FontSize="12"/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+                
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+    
+</ContentPage>
