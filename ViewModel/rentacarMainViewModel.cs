@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace rentacar.ViewModel
 {
-    internal class rentacarMainViewModel
+    internal class rentacarMainViewModel:BaseViewModel
     {
     }
 }

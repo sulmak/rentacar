@@ -49,9 +49,28 @@
         
     </CollectionView>
 
+        <ListView x:Name="mylist">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <VerticalStackLayout>
+                        <HorizontalStackLayout>
+                                <Label Text="{Binding Id}"></Label>
+                                <Entry Text="{Binding Code,Mode=TwoWay}" TextChanged="Entry_TextChanged"></Entry>
+                        </HorizontalStackLayout>
+                            
+                            
+                        <HorizontalStackLayout>
+                                <Label Text="{Binding Description}"></Label>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         <HorizontalStackLayout Padding="10" Margin="10" Spacing="10" Opacity="100">
-            <Button Text="Previous" WidthRequest="110" FontSize="20" ></Button>
-            <Button Text="Next" WidthRequest="100" FontSize="20" ></Button>
+            <Button Text="Add" WidthRequest="110" FontSize="20" Clicked="Button_Clicked" ></Button>
+            <Button Text="Load" WidthRequest="100" FontSize="20" Clicked="Button_Clicked_1" ></Button>
         </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>
